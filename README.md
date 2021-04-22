@@ -1,6 +1,6 @@
 # jssdk
 wallet sdk
-
+```
 exam:
 import getWalletInfo from filePath
 1. 获取签名
@@ -34,4 +34,4 @@ getWalletInfo('multiSignature', arr // 交易数组 [{value:'数量', to:'地址
       }).catch(err=>{
         // Error 错误信息 e.message
       })
-
+```
