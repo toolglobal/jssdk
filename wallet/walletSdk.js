@@ -8,7 +8,13 @@ const typeMap = {
   getCurrentAccountCoinBalance: true, // 获取余额
   getSignature: true, // 获取签名
   getCurrentAccountCoinAddress: true, // 指定币种合约地址
-  multiSignature: true // 批量交易OLO
+  multiSignature: true, // 批量交易OLO
+  getCurrentAccountAddress: true, // 获取当前账户地址
+  getAccountAddressList: true, // 获取所有账户地址
+  getSignatureRequestResult: true, // 返回单签上链结果
+  getMultiSignatureRequestResult: true, // 返回批量签名上链结果
+  getChainRequestResult: true, // 单签返回上链结果（不签名）
+  getMultiChainRequestResult: true // 批量签名返回上链结果（不签名）
 }
 
 const getWalletInfo = (typeName, params) => {
@@ -38,6 +44,7 @@ const getWalletInfo = (typeName, params) => {
       // window.webkit.messageHandlers.accessToken.postMessage(null)
       Promise.reject('IOS 暂不支持')
     } else {
+      // console.log('typeName', typeName)
       window.oloJs[typeName](params)
     }
   })
