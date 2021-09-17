@@ -15,7 +15,10 @@ const typeMap = {
   getSignatureRequestResult: true, // 返回单签上链结果
   getMultiSignatureRequestResult: true, // 返回批量签名上链结果
   getChainRequestResult: true, // 单签返回上链结果（不签名）
-  getMultiChainRequestResult: true // 批量签名返回上链结果（不签名）
+  getMultiChainRequestResult: true, // 批量签名返回上链结果（不签名）
+  getSignResultNeedPassword: true, // 查询授权额度签名需要密码
+  sendTransaction: true, // 狐狸交易
+  chainId: true // 获取chainId
 }
 
 const getWalletInfo = (typeName, params) => {
@@ -35,6 +38,8 @@ const getWalletInfo = (typeName, params) => {
   }
   const promise = new Promise((resolve, reject) => {
     // console.log('excute promise')
+    // window[typeName]=resolve
+    // window[`${typeName}Reject`]=reject
     const { sName, fName } = setCbMap(typeName, resolve, reject)
     if (isIOS) {
       // window.webkit.messageHandlers.accessToken.postMessage(null)

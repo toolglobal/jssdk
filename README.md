@@ -118,4 +118,28 @@ getWalletInfo('getMultiChainRequestResult', jsonTest
       }).catch(err=>{
         // Error 错误信息 e.message
       })
+
+11. 查询授权额度签名
+getWalletInfo('getSignResultNeedPassword', jsonTest
+      ).then(res => {
+        // 返回信息
+      }).catch(err=>{
+        // Error 错误信息 e.message
+      })
+
+12. // 兼容metamask交易, metaMaskJson和metamask交易参数一致
+getWalletInfo('sendTransaction', metaMaskJson
+      ).then(res => {
+        // 返回信息
+      }).catch(err=>{
+        // Error 错误信息 e.message
+      })
+
+13. 获取当前chainId
+getWalletInfo('chainId', {}
+      ).then(res => {
+        // 返回信息
+      }).catch(err=>{
+        // Error 错误信息 e.message
+      })
 ```
